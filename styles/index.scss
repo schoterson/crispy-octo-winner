@@ -1,0 +1,105 @@
+body {
+
+	padding: 0;
+	margin: 0;
+	background: #000;
+	color: #eee;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+
+	li {
+		list-style-type: none;
+		list-style-position: inside;
+		text-indent: 0;
+	}
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	flex-direction: row;
+	overflow: hidden;
+	height: 100vh;
+	width: 100vw;
+}
+
+.leftColumn {
+	width: 350px;
+	overflow-y: auto;
+	height: 95vh;
+	margin-right: 0;
+	padding-right: 3px;
+
+	/* prevent scroll for all child lists */
+	&.noScroll .list {
+		overflow: hidden;
+		margin-right: 15px;
+	}
+}
+
+.list {
+	text-align: left;
+	margin-right: 0;
+	padding: 3px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 200px;
+	border: 1px solid #efefef;
+	position: relative;
+	width: 100%;
+
+	padding: 3px 0px;
+
+	input {
+		width: 200px;
+	}
+}
+
+.popup {
+	padding: 2px;
+	text-align: left;
+	z-index: 10;
+	display: none;
+	width: 500px;
+	height: 300px;
+	overflow-y: auto;
+	border: 1px solid red;
+	position: absolute;
+	top: 30px;
+	left: 15px;
+	background: rgba(26, 78, 57, 0.85);
+
+
+	&.show {
+		display: block;
+	}
+
+	.close {
+		display: block;
+		margin-right: 10px;
+		float: right;
+		color: rgb(226, 231, 197);
+		text-decoration: none;
+	}
+}
+
+.centerColumn {
+	text-align: left;
+	padding: 10px 15px;
+	flex-grow: 1;
+
+	// p {
+	// 	width: 80%
+	// }
+}
+
+/* prevent scroll */
+.noScroll {
+	overflow-y: hidden;
+	margin-right: 15px;
+}
